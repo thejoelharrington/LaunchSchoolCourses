@@ -1,0 +1,1 @@
+refute(list.include?('xyz'))
