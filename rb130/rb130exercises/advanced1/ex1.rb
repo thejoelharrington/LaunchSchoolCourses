@@ -1,9 +1,29 @@
-#create a new enumerator object. I will define what values are iterated upon. this enumerator should be able to iterate over a list of factorials starting with zero factorial 0!.
+factorial = Enumerator.new do |yielder|
+  accumulator = 1
+  number = 0
+  loop do
+    accumulator = number.zero? ? 1 : accumulator * number
+    yielder << accumulator
+    number += 1
+  end
+end
 
-#print first 7 factorials with an external iterator.
-#print 3 more factorials (theyll be incorrect)
-#reset enumerator with #rewind method, and print 7 more factorials.
+# yielder sets the nxt value in the enumerator object. accumulator * number = the next factorial, we then yield it to set the next value.
 
-=begin
-Enumerator, specifically, is a class in Ruby that allows both types of iterations – external and internal. Internal iteration refers to the form of iteration which is controlled by the class in question, while external iteration means that the environment or the client controls the way iteration is performed.
-=end
+# External iterators
+# Enumerable#next returns the next object in the enumerator and moves the internal position forward.
+ 
+6.times { |number| puts "#{number}! == #{factorial.next}" }
+puts "=========================="
+6.times { |number| puts "#{number}! == #{factorial.next}" }
+puts "=========================="
+factorial.rewind
+6.times { |number| puts "#{number}! == #{factorial.next}" }
+puts "=========================="
+
+# Internal iterators
+
+factorial.each_with_index do |value, number|
+  puts "#{number}! == #{value}"
+  break if number >= 5
+end
