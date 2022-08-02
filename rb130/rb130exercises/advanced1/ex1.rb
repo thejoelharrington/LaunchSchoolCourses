@@ -27,3 +27,5 @@ factorial.each_with_index do |value, number|
   puts "#{number}! == #{value}"
   break if number >= 5
 end
+
+

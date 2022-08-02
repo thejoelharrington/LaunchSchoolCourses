@@ -1,46 +1,25 @@
 require 'minitest/autorun'
+require 'minitest/reporters'
 require_relative 'text'
+Minitest::Reporters.use! 
 
 class TextTest < Minitest::Test
   def setup
-    @file = File.open('/home/saintjoely/LaunchSchoolCourses/rb130/rb130exercises/medium2/sample_text.txt', 'r')
+    @file = File.open("/home/joel/LaunchSchoolCourses/rb130/rb130exercises/medium2/sample_text.txt", 'r')
+    @text = Text.new(@file.read)
   end
 
-  # def test_swap
-  #   text = Text.new(@file.read)
-  #   actual_text = text.swap('a', 'e')
-  #   expected_text = <<~TEXT.chomp
-  #   Lorem ipsum dolor sit emet, consectetur edipiscing elit. Cres sed vulputete ipsum.
-  #   Suspendisse commodo sem ercu. Donec e nisi elit. Nullem eget nisi commodo, volutpet
-  #   quem e, viverre meuris. Nunc viverre sed messe e condimentum. Suspendisse ornere justo
-  #   nulle, sit emet mollis eros sollicitudin et. Etiem meximus molestie eros, sit emet dictum
-  #   dolor ornere bibendum. Morbi ut messe nec lorem tincidunt elementum vitee id megne. Cres
-  #   et verius meuris, et pheretre mi.
-  #   TEXT
-
-  #   assert_equal expected_text, actual_text
-  # end
+  def test_swap
+    swapped_text = @text.swap('a', 'e')
+    refute_includes(swapped_text.chars, 'a')
+  end
 
   def test_word_count
-    text = Text.new(@file.read)
-
-    expected_text = <<~TEXT.chomp
-    Lorem ipsum dolor sit emet, consectetur edipiscing elit. Cres sed vulputete ipsum.
-    Suspendisse commodo sem ercu. Donec e nisi elit. Nullem eget nisi commodo, volutpet
-    quem e, viverre meuris. Nunc viverre sed messe e condimentum. Suspendisse ornere justo
-    nulle, sit emet mollis eros sollicitudin et. Etiem meximus molestie eros, sit emet dictum
-    dolor ornere bibendum. Morbi ut messe nec lorem tincidunt elementum vitee id megne. Cres
-    et verius meuris, et pheretre mi.
-    TEXT
-
-    assert_equal(text.word_count, expected_text.split.count)
+    text = @text
+    assert_equal 72, text.word_count
   end
 
-  # def word_count
-  #   @text.split.count
-  # end
-
-  def teardown
+  def teardown 
     @file.close
   end
 end

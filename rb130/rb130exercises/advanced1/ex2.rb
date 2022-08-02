@@ -60,7 +60,7 @@ A Proc object does not require that the correct number of arguments are passed t
 
 
 =begin
-  Lambdas are types of Proc's. Technically they are both Proc objects. An implicit block is a grouping of code, a type of closure, it is not an Object.
+  Lambdas are types of Procs. Technically they are both Proc objects. An implicit block is a grouping of code, a type of closure, it is not an Object.
   Lambdas enforce the number of arguments passed to them. Implicit blocks and Procs do not enforce the number of arguments passed in.
 =end
 
