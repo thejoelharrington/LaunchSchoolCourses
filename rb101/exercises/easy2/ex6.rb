@@ -1,9 +1,6 @@
-class Television
-  def self.manufacturer
-    # method logic. this is the class method
-  end
 
-  def model
-    # method logic
-  end
+value = 1
+while value <= 99
+  puts value
+  value += 2
 end

@@ -1,8 +1,3 @@
-class Bag
-  def initialize(color, material)
-    @color = color
-    @material = material
-  end
+def calculate_bonus(salary, bonus)
+  bonus ? (salary / 2) : 0
 end
-
-Bag.new("blue","carpet")

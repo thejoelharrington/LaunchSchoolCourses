@@ -1,3 +1,9 @@
-# from inside the method we're calling self.class
-# self. identifies the object itself and #class returns
-# the class name. Thus returning Car.
+def digit_list(number)
+  digits = []
+  loop do
+    number, remainder = number.divmod(10)
+    digits.unshift(remainder)
+    break if number == 0
+  end
+  digits
+end the class name. Thus returning Car.

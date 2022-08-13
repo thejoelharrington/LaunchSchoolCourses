@@ -1,3 +1,9 @@
-# excited_dog = "excited dog" => local variable
-# @excited_dog = "excited dog" => instance variable
-# @@excited_dog = "excited dog" => class variable
+print 'What is your name? '
+name = gets.chomp
+
+if name[-1] == '!'
+  name = name.chop
+  puts "HELLO #{name.upcase}. WHY ARE WE SCREAMING?"
+else
+  puts "Hello #{name}."
+end

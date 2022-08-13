@@ -1,1 +1,0 @@
-# the result is one random sample of the array ["eat a nice lunch", "take a nap soon", "stay at work late"] will be appended to the end of "You will " every time you call it.

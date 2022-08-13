@@ -1,10 +1,11 @@
-class Cube
-  attr_reader :volume
 
-  def initialize(volume)
-    @volume = volume
+def reverse_words(string)
+  words = []
+
+  string.split.each do |word|
+    word.reverse! if word.size >= 5
+    words << word
   end
-end
 
-big_cube = Cube.new(5000)
-puts big_cube.instance_variable_get("@volume")
+  words.join(' ')
+end

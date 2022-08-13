@@ -1,1 +1,13 @@
-# Ruby starts by checking the curent classes methods, if none match, it looks at the methods that are inside the included module (if applicable). Then Ruby checks the methods accessible through inheritence. Then it checks all the way up the hierarchy to Object, Kernel, BasicObject.
+print 'What is the bill? '
+bill = gets.chomp
+bill = bill.to_f
+
+print 'What is the tip percentage? '
+percentage = gets.chomp
+percentage = percentage.to_f
+
+tip   = (bill * (percentage / 100)).round(2)
+total = (bill + tip).round(2)
+
+puts "The tip is $#{tip}"
+puts "The total is $#{total}"

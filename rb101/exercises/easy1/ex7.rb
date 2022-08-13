@@ -1,1 +1,10 @@
-# to_s' default return is the objects class name and the object id
+def stringy(size)
+  numbers = []
+
+  size.times do |index|
+    number = index.even? ? 1 : 0
+    numbers << number
+  end
+
+  numbers.join
+end

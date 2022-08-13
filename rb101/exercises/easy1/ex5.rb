@@ -1,13 +1,3 @@
-class Fruit
-  def initialize(name)
-    name = name
-  end
+def reverse_sentence(string)
+  string.split.reverse.join(' ')
 end
-
-class Pizza
-  def initialize(name)
-    @name = name
-  end
-end
-
-# Pizza class has the instance variable. it has @

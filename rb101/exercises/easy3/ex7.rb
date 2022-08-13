@@ -1,17 +1,9 @@
-class Light
-  attr_accessor :brightness, :color
-
-  def initialize(brightness, color)
-    @brightness = brightness
-    @color = color
+def oddities(array)
+  odd_elements = []
+  index = 0
+  while index < array.size
+    odd_elements << array[index]
+    index += 2
   end
-
-  def self.information
-    return "I want to turn on the light with a brightness level of super high and a color of green"
-  end
-
+  odd_elements
 end
-
-# unnecessary code in this class:
-# --attr_accessor (depending on what you're doing.)
-# --return

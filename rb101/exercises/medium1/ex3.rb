@@ -1,16 +1,7 @@
-class InvoiceEntry
-  attr_reader :quantity, :product_name
-
-  def initialize(product_name, number_purchased)
-    @quantity = number_purchased
-    @product_name = product_name
+def max_rotation(number)
+  number_digits = number.to_s.size
+  number_digits.downto(2) do |n|
+    number = rotate_rightmost_digits(number, n)
   end
-
-  def update_quantity(updated_count)
-    quantity = updated_count if updated_count >= 0
-  end
+  number
 end
-
-=begin
-  You're making it fully accessable this way this making it too easy to manipulate I'd say.
-=end

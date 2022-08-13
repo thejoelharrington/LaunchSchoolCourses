@@ -1,1 +1,0 @@
-# when you inherite from a superclass and overwrite the method within it by using the same name for a method in the subclass you can change its properties for that particular subclass.
