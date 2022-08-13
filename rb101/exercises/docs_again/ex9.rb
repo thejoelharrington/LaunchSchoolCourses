@@ -1,0 +1,1 @@
+https://ruby-doc.org/stdlib/libdoc/psych/rdoc/Psych.html
