@@ -1,25 +1,21 @@
 class SumOfMultiples
-  attr_reader :multiples
+  def initialize(*set)
+    @set = (set.size>0) ? set : [3,5]
+  end
 
-  def self.to(num)
+  def self.to(number)
     SumOfMultiples.new().to(num)
   end
 
-  def initialize(*multiples)
-    @multiples = (multiples.size > 0) ? multiples : [3, 5];
-  end
-
-  def to(num)
-    (1...num).select do |current_num|
-      any_multiple?(current_num)
-    end.sum
+  def to(number)
+    result = 0
+    1.upto(number-1) do |current_number|
+      result+=current_number if set.any?{|n| current_number%n == 0}
+    end
+    result
   end
 
   private
 
-  def any_multiple?(num)
-    multiples.any? do |multiple|
-      (num % multiple).zero?
-    end
-  end
+  attr_reader :set
 end
